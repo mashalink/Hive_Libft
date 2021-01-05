@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*blank;
 
-	if (size < 0)
+	if (size == 0)
 		return (NULL);
 	blank = malloc(size);
 	if (!blank)
