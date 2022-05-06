@@ -17,6 +17,10 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+# define BUFF_SIZE 8
+# define FD_SIZE 4096
 
 typedef struct s_list
 {
@@ -89,5 +93,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);
+
+int		get_next_line(const int fd, char **line);
 
 #endif

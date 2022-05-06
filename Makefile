@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mlink <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: mlink <mlink@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:58:54 by mlink             #+#    #+#              #
-#    Updated: 2019/10/21 15:04:19 by mlink            ###   ########.fr        #
+#    Updated: 2022/05/06 14:25:37 by mlink            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ SRCS = 	ft_atoi.c \
 		ft_strsub.c \
 		ft_strtrim.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+		get_next_line.c
 
 OBIECT = *.o
 
