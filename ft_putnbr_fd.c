@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 11:03:45 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 11:03:47 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 12:01:14 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Prints a number to file discriptor.
 
 void	ft_putnbr_fd(int nb, int fd)
 {

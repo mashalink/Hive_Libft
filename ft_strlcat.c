@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 17:38:15 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/23 17:38:20 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:52:49 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Appends string src to the end of dst. 
 
 size_t	ft_strlcat(char *destination, const char *append, size_t len)
 {

@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:19:23 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 11:19:28 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:21:36 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int ch)
+// Used to convert lowercase alphabets to uppercase letters
+
+int	ft_toupper(int ch)
 {
-	return (ch >= 'a' && ch <= 'z' ? ch - 32 : ch);
+	if (ch >= 'a' && ch <= 'z')
+		ch -= 32;
+	return (ch);
 }

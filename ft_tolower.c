@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:19:08 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 11:19:10 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:20:18 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int ch)
+// Takes an uppercase alphabet and convert it to a lowercase character
+
+int	ft_tolower(int ch)
 {
-	return (ch >= 'A' && ch <= 'Z' ? ch + 32 : ch);
+	if (ch >= 'A' && ch <= 'Z' )
+		ch += 32;
+	return (ch);
 }

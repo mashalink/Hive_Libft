@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 15:48:27 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/28 10:30:00 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:15:39 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdio.h"
 
+//  Cuts a string into an array with a string delimiter.
+
 static size_t	ft_nword(char const *s, char c)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -34,7 +36,7 @@ static size_t	ft_nword(char const *s, char c)
 	return (j);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char	**new;
 	size_t	i;

@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:57:53 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 12:57:54 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:48:38 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Deletes srtring.
 
 void	ft_memdel(void **ap)
 {

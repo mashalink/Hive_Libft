@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 10:44:19 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 10:44:22 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:26:27 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int ch)
+// Checks whether a character is a number or not
+
+int	ft_isdigit(int ch)
 {
-	return (ch >= '0' && ch <= '9');
+	if (ch >= '0' && ch <= '9')
+		return (1);
+	return (0);
 }

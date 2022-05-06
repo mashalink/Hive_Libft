@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:15:09 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/22 17:15:10 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:43:17 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *arr1, const void *arr2, size_t len)
+// Compares the first n bytes of memory area str1 and memory area str2.
+
+int	ft_memcmp(const void *arr1, const void *arr2, size_t len)
 {
 	size_t	i;
 	char	*copy1;

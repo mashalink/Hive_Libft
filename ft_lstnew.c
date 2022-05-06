@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 11:09:04 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/28 11:09:06 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:29:22 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Creat a new list.
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*new;
 	void	*copy;
 
-	if (!(new = (t_list *)malloc(sizeof(t_list))))
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!(new))
 		return (NULL);
 	new->next = NULL;
 	if (!content)
@@ -27,7 +30,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!(copy = malloc(content_size)))
+		copy = malloc(content_size);
+		if (!(copy))
 		{
 			free(new);
 			return (NULL);

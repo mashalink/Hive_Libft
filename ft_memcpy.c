@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:32:10 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 14:32:12 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:43:55 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Copies n characters from memory area src to memory area dest.
 
 void	*ft_memcpy(void *destination, const void *source, size_t len)
 {

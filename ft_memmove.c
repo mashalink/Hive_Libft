@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:55:59 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/22 10:56:01 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:49:48 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Copies n characters from str2 to str1, but for 
+// overlapping memory blocks, memmove() is a safer 
+// approach than memcpy().
 
 void	*ft_memmove(void *destination, const void *source, size_t len)
 {

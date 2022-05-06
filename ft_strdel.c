@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:35:23 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 13:35:24 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:24:59 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Removes a string
 
 void	ft_strdel(char **as)
 {

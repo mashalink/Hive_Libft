@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 13:48:55 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/25 13:48:57 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:17:33 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Returns the substring of a given string between two given indices.
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

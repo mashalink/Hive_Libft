@@ -6,13 +6,15 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 11:18:02 by mlink             #+#    #+#             */
-/*   Updated: 2020/06/04 10:25:13 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 10:52:11 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_numlen(int n)
+// Converts int data type to string data type.
+
+static int	ft_numlen(int n)
 {
 	int		i;
 
@@ -25,7 +27,7 @@ static int		ft_numlen(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t	i;
 	char	*str;
@@ -33,10 +35,14 @@ char			*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return ("-2147483648");
-	neg = ((n < 0) ? 1 : 0);
-	n = ((n < 0) ? n *= -1 : n);
+	neg = 0;
+	if (n < 0)
+		neg = 1;
+	if (n < 0)
+		n *= -1;
 	i = ft_numlen(n) + neg;
-	if (!(str = (char *)ft_strnew(i)))
+	str = (char *)ft_strnew(i);
+	if (!(str))
 		return (NULL);
 	str[i--] = '\0';
 	while (n >= 10)

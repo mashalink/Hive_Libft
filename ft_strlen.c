@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:02:56 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/17 14:02:59 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:56:51 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+// Calculates the length of a given string.
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

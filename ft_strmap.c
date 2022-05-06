@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 11:37:36 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/25 11:37:40 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:56:43 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Returns the given string with certain characters replaced
+// or deleted according to a particular mapping
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {

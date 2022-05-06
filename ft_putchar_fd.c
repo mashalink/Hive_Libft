@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:11:05 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 10:11:07 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 11:57:08 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Prints to file descriptor.
 
 void	ft_putchar_fd(char c, int fd)
 {

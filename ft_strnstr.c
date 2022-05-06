@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 12:03:40 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/23 12:03:44 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:01:46 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// locates the first occurrence of the null-terminated string  str2 
+// in the string str1, where not more than len characters are searched.
 
 char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 {

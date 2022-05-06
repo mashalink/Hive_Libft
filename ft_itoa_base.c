@@ -1,6 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/04 10:43:17 by mlink             #+#    #+#             */
+/*   Updated: 2022/05/04 10:44:15 by mlink            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char		*ft_itoa_base(uintmax_t x, int base)
+// Converts an integer value to a null-terminated string using  
+// the specified base and stores the result in a char array
+// that you must allocate.
+
+char	*ft_itoa_base(uintmax_t x, int base)
 {
 	char		*str;
 	char		*base_s;

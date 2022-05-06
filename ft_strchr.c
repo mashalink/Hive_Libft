@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 14:30:28 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/23 14:30:29 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:12:31 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Searches for the first occurrence of the character c 
+// (an unsigned char) in the string pointed to by the argument str.
 
 char	*ft_strchr(const char *str, int ch)
 {

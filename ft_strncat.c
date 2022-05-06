@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 16:52:45 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/23 16:52:46 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 12:41:05 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Appends the string pointed to by append to the end of 
+// the string pointed to by destination up to n characters long.
 
 char	*ft_strncat(char *destination, const char *append, size_t len)
 {

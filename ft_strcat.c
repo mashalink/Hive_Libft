@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 16:38:03 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/22 16:38:07 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:10:12 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Concatenates the destination string and the source string,
+// and the result is stored in the destination string.
 
 char	*ft_strcat(char *destination, const char *append)
 {

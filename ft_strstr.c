@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:32:08 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/22 17:32:10 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:16:32 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Returns pointer to the first occurrence of the matched string 
+// in the given string.
 
 char	*ft_strstr(const char *str1, const char *str2)
 {

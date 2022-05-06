@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:51:12 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 11:51:15 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:25:59 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Shall return a pointer to a new string, which is 
+// a duplicate of the string pointed to by s1.
 
 char	*ft_strdup(const char *src)
 {
@@ -18,7 +21,9 @@ char	*ft_strdup(const char *src)
 	int		i;
 
 	i = 0;
-	if (!(cope = (char*)malloc(sizeof(*cope) * ft_strlen(src) + 1)))
+	cope = NULL;
+	cope = (char *)malloc(sizeof(*cope) * ft_strlen(src) + 1);
+	if (!(cope))
 		return (NULL);
 	while (src[i])
 	{

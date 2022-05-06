@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 17:54:10 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/25 17:54:14 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/06 13:18:31 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Removes all whitespace characters from the beginning and the end of a string.
+
 char	*ft_strtrim(char const *s)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (!s)
 		return (NULL);

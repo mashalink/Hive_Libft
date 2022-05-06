@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:27:06 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 10:27:08 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:09:09 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Prints character to file descriptor.
+
 void	ft_putstr(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s != NULL)

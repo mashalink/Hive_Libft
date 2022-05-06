@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:31:05 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 11:35:56 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 10:44:45 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+// Converts the string argument str to an integer (type int)
+
+int	ft_atoi(const char *str)
 {
 	long	negative;
 	long	x;
-	long	prev_x;
 
+	if (str == NULL)
+		return (0);
 	x = 0;
 	negative = 1;
-	while (*str == ' ' || *str == '\r' || *str == '\n' || *str == '\f' \
-		|| *str == '\v' || *str == '\t')
+	while (*str == 32 || (*str > 8 && *str < 14))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -31,10 +33,7 @@ int		ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		prev_x = x;
 		x = (x * 10) + (*str - '0');
-		if (prev_x > x)
-			return (negative == 1 ? -1 : 0);
 		str++;
 	}
 	return ((int)x * negative);

@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 10:55:42 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/21 10:55:47 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 10:44:41 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int ch)
+// Checks if the passed character is alphanumeric.
+
+int	ft_isalnum(int ch)
 {
-	return (ft_isalpha(ch) || ft_isdigit(ch));
+	if (ft_isalpha(ch) || ft_isdigit(ch))
+		return (1);
+	return (0);
 }

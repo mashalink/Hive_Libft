@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 11:03:33 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/24 11:03:34 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 12:04:38 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Displays a number.
 
 void	ft_putnbr(int nb)
 {

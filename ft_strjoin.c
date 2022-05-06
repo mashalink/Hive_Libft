@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlink <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 14:27:56 by mlink             #+#    #+#             */
-/*   Updated: 2019/10/25 14:28:00 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/04 13:34:47 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Shall return a pointer to a new string, which is 
+// a joint of the strings.
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
