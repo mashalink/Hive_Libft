@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 11:11:29 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/22 19:12:53 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:24:29 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static long double	ft_round_x(long double x, t_all *all)
 	return (x);
 }
 
-static char			*ft_after_dot_num(long double x, t_all *all)
+static char	*ft_after_dot_num(long double x, t_all *all)
 {
 	int		i;
 	char	*str;
@@ -52,44 +52,60 @@ static char			*ft_after_dot_num(long double x, t_all *all)
 	return (str);
 }
 
-static char			*ft_prec(long double x, t_all *all)
+static char	*ft_prec(long double x, t_all *all)
 {
 	char	*str;
 	char	*str2;
 	char	*tmp;
 
 	x = ft_round_x(x, all);
-	if (!(str = ft_itoa_base((intmax_t)x, 10, all)))
+	str = ft_itoa_base((intmax_t)x, 10, all);
+	if (!(str))
 		return (NULL);
 	if (!all->prec && !all->f_hash)
 		return (str);
 	str2 = ft_join_del(str, ".", 1, 0);
-	if (!(str = ft_after_dot_num((x - (intmax_t)x), all)))
+	str = ft_after_dot_num((x - (intmax_t)x), all);
+	if (!(str))
 		return (NULL);
-	if (!(tmp = ft_join_del(str2, str, 1, 1)))
+	tmp = ft_join_del(str2, str, 1, 1);
+	if (!(tmp))
 		return (NULL);
 	return (tmp);
 }
 
-int					ft_double(va_list args, t_all *all)
+long double	ft_take_number(va_list args, t_all *all)
 {
 	long double	x;
-	char		*str;
-	int			len;
 
 	if (all->mod_big_l)
 		x = (long double)va_arg(args, long double);
 	else
 		x = (long double)va_arg(args, double);
+	return (x);
+}
+
+int	ft_double(va_list args, t_all *all)
+{
+	long double	x;
+	char		*str;
+	int			len;
+
+	x = ft_take_number(args, all);
 	if (!all->f_prec && all->prec == 0)
 		all->prec = 6;
-	if (!(str = ft_prec(x, all)))
+	str = ft_prec(x, all);
+	if (!(str))
 		return (-1);
 	len = ft_strlen(str);
 	if (len > all->width)
-		if (!(str = ft_join_f(str, all)))
+	{
+		str = ft_join_f(str, all);
+		if (!(str))
 			return (-1);
-	if (!(str = ft_str_flag_width(str, all)))
+	}
+	str = ft_str_flag_width(str, all);
+	if (!(str))
 		return (-1);
 	if (all->neg)
 		str = ft_join_del("-", str, 0, 1);

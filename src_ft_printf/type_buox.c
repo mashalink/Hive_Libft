@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 15:41:52 by mlink             #+#    #+#             */
-/*   Updated: 2020/02/29 14:47:33 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:12:47 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ static char	*ft_prec(char *str, t_all *all, int base, uintmax_t x)
 		len++;
 	if (all->prec > len)
 	{
-		if (!(str_new = ft_strnew(all->prec - len)))
+		str_new = ft_strnew(all->prec - len);
+		if (!(str_new))
 			return (NULL);
 		str_new = ft_memset(str_new, '0', all->prec - len);
-		if (!(tmp = ft_join_del(str_new, str, 1, 1)))
+		tmp = ft_join_del(str_new, str, 1, 1);
+		if (!(tmp))
 			return (NULL);
 		return (tmp);
 	}
@@ -76,7 +78,8 @@ static char	*ft_width_flag(char *str, t_all *all, int base, uintmax_t x)
 		len = len + 2;
 	if (all->width > len)
 	{
-		if (!(str_new = ft_strnew(all->width - len)))
+		str_new = ft_strnew(all->width - len);
+		if (!(str_new))
 			return (NULL);
 		if (all->f_zero && !all->f_prec)
 			str_new = ft_memset(str_new, '0', all->width - len);
@@ -92,7 +95,7 @@ static char	*ft_width_flag(char *str, t_all *all, int base, uintmax_t x)
 	return (str);
 }
 
-int			ft_type_buox(va_list args, t_all *all, char c)
+int	ft_type_buox(va_list args, t_all *all, char c)
 {
 	uintmax_t	x;
 	char		*str;
@@ -102,11 +105,13 @@ int			ft_type_buox(va_list args, t_all *all, char c)
 	str = ft_cheng_mod_buox(args, all, base, &x);
 	if (!str)
 		return (0);
-	if (!(str = ft_prec(str, all, base, x)))
+	str = ft_prec(str, all, base, x);
+	if (!(str))
 		return (-1);
 	if (all->f_minus)
 		all->f_zero = 0;
-	if (!(str = ft_width_flag(str, all, base, x)))
+	str = ft_width_flag(str, all, base, x);
+	if (!(str))
 		return (-1);
 	fd_putstr(str, all);
 	free(str);

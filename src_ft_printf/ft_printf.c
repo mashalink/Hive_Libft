@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 17:11:14 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/22 21:00:19 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 18:59:09 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ static t_all	*ft_clean(t_all *all)
 	return (all);
 }
 
-static int		print_args(va_list args, t_all *all, char c, int i)
+static int	print_args(va_list args, t_all *all, char c, int i)
 {
 	if (c == 'd' || c == 'i')
 		ft_int(args, all);
-	else if (c == 'o' || c == 'O' || c == 'x' || c == 'X'
+	else if (c == 'o' || c == 'O' || c == 'x' || c == 'X' \
 	|| c == 'b' || c == 'u' || c == 'U')
 		ft_type_buox(args, all, c);
 	else if (c == 's')
@@ -53,7 +53,7 @@ static int		print_args(va_list args, t_all *all, char c, int i)
 	return (++i);
 }
 
-static int		ft_first(const char *form, va_list args, int fd, t_all *all)
+static int	ft_first(const char *form, va_list args, int fd, t_all *all)
 {
 	size_t	i;
 
@@ -82,7 +82,7 @@ static int		ft_first(const char *form, va_list args, int fd, t_all *all)
 	return (all->save_count);
 }
 
-int				ft_printf(const char *form, ...)
+int	ft_printf(const char *form, ...)
 {
 	va_list	args;
 	int		count;
@@ -90,7 +90,8 @@ int				ft_printf(const char *form, ...)
 
 	all = NULL;
 	count = 0;
-	if (!(all = (t_all *)ft_memalloc(sizeof(t_all))))
+	all = (t_all *)ft_memalloc(sizeof(t_all));
+	if (!all)
 		exit(0);
 	all->count = 0;
 	all->save_count = 0;
@@ -103,7 +104,7 @@ int				ft_printf(const char *form, ...)
 	return (count);
 }
 
-int				fd_printf(int fd, const char *form, ...)
+int	fd_printf(int fd, const char *form, ...)
 {
 	va_list	args;
 	int		count;
@@ -111,7 +112,8 @@ int				fd_printf(int fd, const char *form, ...)
 
 	all = NULL;
 	count = 0;
-	if (!(all = (t_all *)ft_memalloc(sizeof(t_all))))
+	all = (t_all *)ft_memalloc(sizeof(t_all));
+	if (!all)
 		exit(0);
 	all->count = 0;
 	all->save_count = 0;

@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 18:34:40 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/22 22:19:20 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:10:22 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ static char	*ft_zero_minus(char *str1, char *str2, t_all *all, int len)
 	if (all->f_zero)
 	{
 		str2 = ft_memset(str2, '0', len);
-		if (!(str_new = ft_join_f(str2, all)))
+		str_new = ft_join_f(str2, all);
+		if (!(str_new))
 			return (NULL);
 	}
 	else
 	{
 		str_new = ft_memset(str2, ' ', len);
-		if (!(str1 = ft_join_f(str1, all)))
+		str1 = ft_join_f(str1, all);
+		if (!(str1))
 			return (NULL);
 	}
 	if (all->f_minus)
@@ -45,17 +47,20 @@ static char	*ft_str_prec(char *str, t_all *all)
 	len = ft_strlen(str);
 	if (all->prec > len)
 	{
-		if (!(str_new = ft_strnew(all->prec - len)))
+		str_new = ft_strnew(all->prec - len);
+		if (!(str_new))
 			return (NULL);
 		str_new = ft_memset(str_new, '0', all->prec - len);
-		if (!(str_new = ft_join_del(str_new, str, 1, 1)))
+		str_new = ft_join_del(str_new, str, 1, 1);
+		if (!(str_new))
 			return (NULL);
 		if (all->f_zero == 1)
 			all->f_zero = 0;
 		len = ft_strlen(str_new);
 		if (len > all->width)
 		{
-			if (!(str_new = ft_join_f(str_new, all)))
+			str_new = ft_join_f(str_new, all);
+			if (!(str_new))
 				return (NULL);
 		}
 		return (str_new);
@@ -63,7 +68,7 @@ static char	*ft_str_prec(char *str, t_all *all)
 	return (str);
 }
 
-char		*ft_str_flag_width(char *str, t_all *all)
+char	*ft_str_flag_width(char *str, t_all *all)
 {
 	int		len;
 	char	*str_new;
@@ -74,13 +79,15 @@ char		*ft_str_flag_width(char *str, t_all *all)
 	{
 		if (all->neg || all->f_plus || all->f_space)
 		{
-			if (!(str_new = ft_strnew(all->width - len - 1)))
+			str_new = ft_strnew(all->width - len - 1);
+			if (!(str_new))
 				return (NULL);
 			tmp = ft_zero_minus(str, str_new, all, all->width - len - 1);
 		}
 		else
 		{
-			if (!(str_new = ft_strnew(all->width - len)))
+			str_new = ft_strnew(all->width - len);
+			if (!(str_new))
 				return (NULL);
 			tmp = ft_zero_minus(str, str_new, all, all->width - len);
 		}
@@ -114,18 +121,20 @@ static char	*ft_next_step(intmax_t x, t_all *all)
 	return (str);
 }
 
-int			ft_int(va_list args, t_all *all)
+int	ft_int(va_list args, t_all *all)
 {
 	intmax_t	x;
 	char		*str;
 
 	ft_cheng_mod(args, all, &x);
 	str = ft_next_step(x, all);
-	if (!(str = ft_str_prec(str, all)))
+	str = ft_str_prec(str, all);
+	if (!(str))
 		return (0);
 	if (all->f_prec)
 		all->f_zero = 0;
-	if (!(str = ft_str_flag_width(str, all)))
+	str = ft_str_flag_width(str, all);
+	if (!(str))
 		return (0);
 	if (all->neg)
 		str = ft_join_del("-", str, 0, 1);

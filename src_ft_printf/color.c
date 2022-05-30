@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 12:54:23 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/21 16:46:45 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 18:56:10 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	ft_formtting(char c, t_all *all)
 		fd_putstr("\x1b[2m", all);
 }
 
-int			ft_set_print(const char *form, size_t i, t_all *all)
+int	ft_set_print(const char *form, size_t i, t_all *all)
 {
 	size_t	k;
 	size_t	j;

@@ -6,15 +6,15 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 16:08:52 by mlink             #+#    #+#             */
-/*   Updated: 2022/05/12 18:40:31 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:19:06 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_base(char c, t_all *all)
+int	ft_base(char c, t_all *all)
 {
-	int base;
+	int	base;
 
 	base = 10;
 	if (c == 'b')
@@ -27,15 +27,20 @@ int			ft_base(char c, t_all *all)
 	}
 	else if (c == 'U')
 		all->mod_l = 1;
-	else if (c == 'x' || c == 'X')
+	else if (c == 'x')
 	{
 		base = 16;
-		all->x = c == 'X' ? 1 : 0;
+		all->x = 0;
+	}
+	else if (c == 'X')
+	{
+		base = 16;
+		all->x = 1;
 	}
 	return (base);
 }
 
-char		*ft_join_f(char *str, t_all *all)
+char	*ft_join_f(char *str, t_all *all)
 {
 	char	*str_new;
 
@@ -59,14 +64,15 @@ char		*ft_join_f(char *str, t_all *all)
 	return (str);
 }
 
-void		fd_putstr(const char *s, t_all *all)
+void	fd_putstr(const char *s, t_all *all)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s != NULL)
 	{
 		while (s[i])
+		{		
 			if (all->count < 1024)
 				all->buffer[all->count++] = s[i++];
 			else
@@ -75,6 +81,7 @@ void		fd_putstr(const char *s, t_all *all)
 				all->save_count += all->count;
 				all->count = 0;
 			}
+		}
 	}
 }
 
@@ -84,18 +91,20 @@ static char	*ft_clean_str(int len, uintmax_t x)
 
 	if (x == 0)
 	{
-		if (!(str = ft_strnew(1)))
+		str = ft_strnew(1);
+		if (!(str))
 			return (NULL);
 		str[0] = '0';
 		return (str);
 	}
-	if (!(str = ft_strnew(len)))
+	str = ft_strnew(len);
+	if (!(str))
 		return (NULL);
 	str[len] = '\0';
 	return (str);
 }
 
-char		*ft_itoa_base(uintmax_t x, int base, t_all *all)
+char	*ft_itoa_base(uintmax_t x, int base, t_all *all)
 {
 	char		*str;
 	char		*base_s;

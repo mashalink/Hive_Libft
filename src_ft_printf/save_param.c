@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:41:56 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/22 22:16:11 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:13:46 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void	ft_save_flag(const char *form, size_t i, t_all *all)
 
 static void	ft_save_mod(const char *form, size_t i, t_all *all)
 {
-	size_t j;
-	size_t k;
+	size_t	j;
+	size_t	k;
 
 	k = i - 1;
 	j = i + 1;
@@ -78,7 +78,7 @@ static int	ft_save_width(const char *form, size_t i,
 
 static int	ft_save_prec(const char *form, size_t i, t_all *all, va_list args)
 {
-	int j;
+	int	j;
 
 	j = i + 1;
 	if (form[j] == '*' || ('0' <= form[j] && form[j] <= '9'))
@@ -103,10 +103,10 @@ static int	ft_save_prec(const char *form, size_t i, t_all *all, va_list args)
 	return (i);
 }
 
-int			ft_save(const char *form, size_t i, t_all *all, va_list args)
+int	ft_save(const char *form, size_t i, t_all *all, va_list args)
 {
-	while (ft_is_flag(form[i]) || ft_is_mod(form[i]) ||
-			ft_is_prec(form[i]) || ft_is_width(form[i]))
+	while (ft_is_flag(form[i]) || ft_is_mod(form[i]) || \
+	ft_is_prec(form[i]) || ft_is_width(form[i]))
 	{
 		if (ft_is_flag(form[i]))
 			ft_save_flag(form, i, all);

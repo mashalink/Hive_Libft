@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 11:07:10 by mlink             #+#    #+#             */
-/*   Updated: 2020/07/22 19:46:14 by mlink            ###   ########.fr       */
+/*   Updated: 2022/05/30 19:25:56 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@
 **	<7> - Dim
 */
 
-typedef struct	s_all
+typedef struct s_all
 {
 	int			mod_l;
 	int			mod_ll;
@@ -101,8 +101,8 @@ void			fd_putstr(const char *s, t_all *all);
 char			*ft_itoa_base(uintmax_t x, int base, t_all *all);
 
 void			ft_cheng_mod(va_list args, t_all *all, intmax_t *x);
-char			*ft_cheng_mod_buox(va_list args, t_all *all,
-											int base, uintmax_t *x);
+char			*ft_cheng_mod_buox(va_list args, t_all *all, \
+				int base, uintmax_t *x);
 
 void			print_buffer(t_all *all);
 
