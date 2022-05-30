@@ -6,80 +6,81 @@
 #    By: mlink <mlink@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:58:54 by mlink             #+#    #+#              #
-#    Updated: 2022/05/06 14:25:37 by mlink            ###   ########.fr        #
+#    Updated: 2022/05/30 17:03:40 by mlink            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = 	ft_atoi.c \
-		ft_bzero.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_islower.c \
-		ft_isprint.c \
-		ft_isspace.c \
-		ft_isupper.c \
-		ft_itoa.c \
-		ft_lstadd.c \
-		ft_lstdel.c \
-		ft_lstdelone.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-		ft_lstnew.c \
-		ft_lstprint.c \
-		ft_lstsize.c \
-		ft_memalloc.c \
-		ft_memccpy.c \
-		ft_memchr.c \
-		ft_memcmp.c \
-		ft_memcpy.c \
-		ft_memdel.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_putchar_fd.c \
-		ft_putchar.c \
-		ft_putendl_fd.c \
-		ft_putendl.c \
-		ft_putnbr_fd.c \
-		ft_putnbr.c \
-		ft_putstr_fd.c \
-		ft_putstr.c \
-		ft_strcat.c \
-		ft_strchr.c \
-		ft_strclr.c \
-		ft_strcmp.c \
-		ft_strcpy.c \
-		ft_strdel.c \
-		ft_strdup.c \
-		ft_strequ.c \
-		ft_striter.c \
-		ft_striteri.c \
-		ft_strjoin.c \
-		ft_strlcat.c \
-		ft_strlen.c \
-		ft_strmap.c \
-		ft_strmapi.c \
-		ft_strncat.c \
-		ft_strncmp.c \
-		ft_strncpy.c \
-		ft_strnequ.c \
-		ft_strnew.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strsplit.c \
-		ft_strstr.c \
-		ft_strsub.c \
-		ft_strtrim.c \
-		ft_tolower.c \
-		ft_toupper.c \
-		get_next_line.c
+SRCS = 	./scr_libft/ft_atoi.c \
+		./scr_libft/ft_bzero.c \
+		./scr_libft/ft_isalnum.c \
+		./scr_libft/ft_isalpha.c \
+		./scr_libft/ft_isascii.c \
+		./scr_libft/ft_isdigit.c \
+		./scr_libft/ft_islower.c \
+		./scr_libft/ft_isprint.c \
+		./scr_libft/ft_isspace.c \
+		./scr_libft/ft_isupper.c \
+		./scr_libft/ft_itoa.c \
+		./scr_libft/ft_join_del.c \
+		./scr_libft/ft_lstadd.c \
+		./scr_libft/ft_lstdel.c \
+		./scr_libft/ft_lstdelone.c \
+		./scr_libft/ft_lstiter.c \
+		./scr_libft/ft_lstmap.c \
+		./scr_libft/ft_lstnew.c \
+		./scr_libft/ft_lstprint.c \
+		./scr_libft/ft_lstsize.c \
+		./scr_libft/ft_memalloc.c \
+		./scr_libft/ft_memccpy.c \
+		./scr_libft/ft_memchr.c \
+		./scr_libft/ft_memcmp.c \
+		./scr_libft/ft_memcpy.c \
+		./scr_libft/ft_memdel.c \
+		./scr_libft/ft_memmove.c \
+		./scr_libft/ft_memset.c \
+		./scr_libft/ft_putchar_fd.c \
+		./scr_libft/ft_putchar.c \
+		./scr_libft/ft_putendl_fd.c \
+		./scr_libft/ft_putendl.c \
+		./scr_libft/ft_putnbr_fd.c \
+		./scr_libft/ft_putnbr.c \
+		./scr_libft/ft_putstr_fd.c \
+		./scr_libft/ft_putstr.c \
+		./scr_libft/ft_strcat.c \
+		./scr_libft/ft_strchr.c \
+		./scr_libft/ft_strclr.c \
+		./scr_libft/ft_strcmp.c \
+		./scr_libft/ft_strcpy.c \
+		./scr_libft/ft_strdel.c \
+		./scr_libft/ft_strdup.c \
+		./scr_libft/ft_strequ.c \
+		./scr_libft/ft_striter.c \
+		./scr_libft/ft_striteri.c \
+		./scr_libft/ft_strjoin.c \
+		./scr_libft/ft_strlcat.c \
+		./scr_libft/ft_strlen.c \
+		./scr_libft/ft_strmap.c \
+		./scr_libft/ft_strmapi.c \
+		./scr_libft/ft_strncat.c \
+		./scr_libft/ft_strncmp.c \
+		./scr_libft/ft_strncpy.c \
+		./scr_libft/ft_strnequ.c \
+		./scr_libft/ft_strnew.c \
+		./scr_libft/ft_strnstr.c \
+		./scr_libft/ft_strrchr.c \
+		./scr_libft/ft_strsplit.c \
+		./scr_libft/ft_strstr.c \
+		./scr_libft/ft_strsub.c \
+		./scr_libft/ft_strtrim.c \
+		./scr_libft/ft_tolower.c \
+		./scr_libft/ft_toupper.c \
+		./scr_libft/get_next_line.c
 
 OBIECT = *.o
 
-HEADER = libft.h
+HEADER = ./includes
 
 FLAGS = -Wall -Wextra -Werror -c 
 
