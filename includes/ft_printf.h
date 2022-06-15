@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 11:07:10 by mlink             #+#    #+#             */
-/*   Updated: 2022/05/30 19:25:56 by mlink            ###   ########.fr       */
+/*   Updated: 2022/06/15 13:46:39 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ typedef struct s_all
 
 int				ft_printf(const char *form, ...);
 int				fd_printf(int fd, const char *form, ...);
+
+t_all			*ft_clean(t_all *all);
 
 int				ft_save(const char *form, size_t i, t_all *all, va_list args);
 

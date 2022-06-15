@@ -6,7 +6,7 @@
 #    By: mlink <mlink@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:58:54 by mlink             #+#    #+#              #
-#    Updated: 2022/05/30 18:51:16 by mlink            ###   ########.fr        #
+#    Updated: 2022/06/15 13:56:03 by mlink            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ SRC_DIR = ./src_ft_printf/
 SRC =		check.c color.c cheng_mod.c\
 			ft_printf.c\
 			help_function.c\
+			init.c\
 			print_buffer.c\
 			save_param.c\
 			type_buox.c 	type_c.c		type_s.c\
 			type_di.c 		type_f.c 		type_p.c 
 SRCS=$(addprefix $(SRC_DIR), $(SRC))
 
-LIB_SRC_DIR = ./scr_libft/
+LIB_SRC_DIR = ./src_libft/
 LIB_SRC =	ft_atoi.c \
 			ft_bzero.c \
 			ft_isalnum.c	ft_isalpha.c	ft_isascii.c \

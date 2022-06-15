@@ -6,34 +6,11 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 17:11:14 by mlink             #+#    #+#             */
-/*   Updated: 2022/05/30 18:59:09 by mlink            ###   ########.fr       */
+/*   Updated: 2022/06/15 13:51:30 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static t_all	*ft_clean(t_all *all)
-{
-	all->mod_l = 0;
-	all->mod_ll = 0;
-	all->mod_h = 0;
-	all->mod_hh = 0;
-	all->mod_j = 0;
-	all->mod_z = 0;
-	all->mod_big_l = 0;
-	all->prec = 0;
-	all->f_prec = 0;
-	all->width = 0;
-	all->f_minus = 0;
-	all->f_plus = 0;
-	all->f_space = 0;
-	all->f_hash = 0;
-	all->f_zero = 0;
-	all->fd = 0;
-	all->neg = 0;
-	all->x = 0;
-	return (all);
-}
 
 static int	print_args(va_list args, t_all *all, char c, int i)
 {
@@ -53,6 +30,15 @@ static int	print_args(va_list args, t_all *all, char c, int i)
 	return (++i);
 }
 
+static int	save_print_buffer(t_all *all, const char *form, int i)
+{
+	if (all->count < 1024)
+		all->buffer[all->count++] = form[i++];
+	else
+		print_buffer(all);
+	return (i);
+}
+
 static int	ft_first(const char *form, va_list args, int fd, t_all *all)
 {
 	size_t	i;
@@ -65,18 +51,16 @@ static int	ft_first(const char *form, va_list args, int fd, t_all *all)
 			all = ft_clean(all);
 			all->fd = fd;
 			i = ft_set_print(form, i, all);
-			i = ft_save(form, i, all, args);
-			if (i >= ft_strlen(form))
-				break ;
-			i = print_args(args, all, form[i], i);
+			if (form[i - 1] != '}' && i > 3 && form[i - 3] != '{')
+			{
+				i = ft_save(form, i, all, args);
+				if (i >= ft_strlen(form))
+					break ;
+				i = print_args(args, all, form[i], i);
+			}
 		}
 		while (form[i] && form[i] != '%')
-		{
-			if (all->count < 1024)
-				all->buffer[all->count++] = form[i++];
-			else
-				print_buffer(all);
-		}
+			i = save_print_buffer(all, form, i);
 	}
 	all->save_count = all->count;
 	return (all->save_count);
