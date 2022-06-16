@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:49:47 by mlink             #+#    #+#             */
-/*   Updated: 2022/06/16 11:43:16 by mlink            ###   ########.fr       */
+/*   Updated: 2022/06/16 17:20:38 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,43 @@ static int	ft_line(char **s, char **line)
 	return (1);
 }
 
+static int	creat_line(const int fd, char **line, char **s, int ret)
+{
+	char		buff[BUFF_SIZE + 1];
+	char		*tmp;
+
+	ret = read(fd, buff, BUFF_SIZE);
+	if (ret < 0)
+		return (-1);
+	else if (ret == 0 && s[0][0] == '\0')
+	{
+		*line = NULL;
+		return (0);
+	}
+	while (ret > 0 && !(ft_strchr(s[0], '\n')))
+	{
+		buff[ret] = '\0';
+		tmp = ft_strjoin(s[0], buff);
+		if (tmp == NULL)
+			return (-1);
+		free(s[0]);
+		s[0] = tmp;
+		ret = read(fd, buff, BUFF_SIZE);
+	}
+	return (ft_line(&s[0], line));
+}
+
 int	get_next_line(const int fd, char **line)
 {
 	int			ret;
 	static char	*s[FD_SIZE];
-	char		buff[BUFF_SIZE + 1];
-	char		*tmp;
 
+	ret = 0;
 	if (fd < 0 || FD_SIZE < fd || line == NULL || BUFF_SIZE < 1)
 		return (-1);
-	ret = read(fd, buff, BUFF_SIZE);
-	while (ret > 0 && !(ft_strchr(s[fd], '\n')))
-	{
-		buff[ret] = '\0';
-		if (s[fd] == NULL)
-			s[fd] = ft_strnew(0);
-		tmp = ft_strjoin(s[fd], buff);
-		if (tmp == NULL)
-			return (-1);
-		free(s[fd]);
-		s[fd] = tmp;
-	}
-	if (ret < 0)
+	if (s[fd] == NULL)
+		s[fd] = ft_strnew(0);
+	if (s[fd] == NULL)
 		return (-1);
-	else if (ret == 0 && (s[fd] == NULL || s[fd][0] == '\0'))
-		return (0);
-	return (ft_line(&s[fd], line));
+	return (creat_line(fd, line, &s[fd], ret));
 }

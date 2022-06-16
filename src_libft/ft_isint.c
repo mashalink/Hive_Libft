@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:11:04 by mlink             #+#    #+#             */
-/*   Updated: 2022/06/16 12:29:46 by mlink            ###   ########.fr       */
+/*   Updated: 2022/06/16 16:58:55 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_isint(char *str)
 	while (*str && ft_isspace((*str)))
 		str++;
 	sign = 1;
-	if (*str == '-')
+	if (*str && *str == '-')
 		sign = -1;
 	if (*str && (*str == '-' || *str == '+'))
 		str ++;
