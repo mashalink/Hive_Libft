@@ -6,13 +6,14 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:49:47 by mlink             #+#    #+#             */
-/*   Updated: 2022/05/30 16:52:36 by mlink            ###   ########.fr       */
+/*   Updated: 2022/06/16 11:43:16 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-// Reads a file and returns text line by line
+// Reads a file and returns text line by line.
+// Line is a text between line feed.
 
 static int	ft_line(char **s, char **line)
 {

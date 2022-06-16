@@ -6,7 +6,7 @@
 #    By: mlink <mlink@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:58:54 by mlink             #+#    #+#              #
-#    Updated: 2022/06/15 13:56:03 by mlink            ###   ########.fr        #
+#    Updated: 2022/06/16 12:27:13 by mlink            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,9 @@ LIB_SRC_DIR = ./src_libft/
 LIB_SRC =	ft_atoi.c \
 			ft_bzero.c \
 			ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
-			ft_isdigit.c	ft_islower.c	ft_isprint.c \
-			ft_isspace.c	ft_isupper.c	ft_itoa.c \
+			ft_isdigit.c	ft_isint.c 		ft_islower.c \
+			ft_isprint.c	ft_isspace.c	ft_isupper.c \
+			ft_itoa.c \
 			ft_join_del.c \
 			ft_lstadd.c		ft_lstdel.c		ft_lstdelone.c \
 			ft_lstiter.c	ft_lstmap.c		ft_lstnew.c \
