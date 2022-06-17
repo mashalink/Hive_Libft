@@ -90,6 +90,7 @@ char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *str1, const char *str2, size_t len);
 char	*ft_strrchr(const char *str, int ch);
 char	**ft_strsplit(char const *s, char c);
+size_t	ft_strsplit_len(char **split);
 char	*ft_strstr(const char *str1, const char *str2);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);

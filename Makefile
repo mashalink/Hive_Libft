@@ -6,7 +6,7 @@
 #    By: mlink <mlink@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:58:54 by mlink             #+#    #+#              #
-#    Updated: 2022/06/16 12:27:13 by mlink            ###   ########.fr        #
+#    Updated: 2022/06/17 13:50:36 by mlink            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ LIB_SRC =	ft_atoi.c \
 			ft_strncat.c	ft_strncmp.c	ft_strncpy.c \
 			ft_strnequ.c	ft_strnew.c		ft_strnstr.c \
 			ft_strrchr.c	ft_strsplit.c	ft_strstr.c \
-			ft_strsub.c		ft_strtrim.c \
+			ft_strsub.c		ft_strtrim.c	ft_strsplit_len.c \
 			ft_tolower.c	ft_toupper.c \
 			get_next_line.c
 LIB_SRCS=$(addprefix $(LIB_SRC_DIR), $(LIB_SRC))
