@@ -51,7 +51,7 @@ static int	ft_first(const char *form, va_list args, int fd, t_all *all)
 			all = ft_clean(all);
 			all->fd = fd;
 			i = ft_set_print(form, i, all);
-			if (form[i - 1] != '}' && i > 3 && form[i - 3] != '{')
+			if (form[i - 1] != '}')
 			{
 				i = ft_save(form, i, all, args);
 				if (i >= ft_strlen(form))

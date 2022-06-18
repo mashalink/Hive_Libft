@@ -57,7 +57,7 @@ static int	creat_line(const int fd, char **line, char **s, int ret)
 		*line = NULL;
 		return (0);
 	}
-	while (ret > 0 && !(ft_strchr(s[0], '\n')))
+	while (ret > 0)
 	{
 		buff[ret] = '\0';
 		tmp = ft_strjoin(s[0], buff);
@@ -65,6 +65,8 @@ static int	creat_line(const int fd, char **line, char **s, int ret)
 			return (-1);
 		free(s[0]);
 		s[0] = tmp;
+		if (ft_strchr(s[fd], '\n'))
+			break ;
 		ret = read(fd, buff, BUFF_SIZE);
 	}
 	return (ft_line(&s[0], line));
