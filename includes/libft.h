@@ -94,6 +94,7 @@ size_t	ft_strsplit_len(char **split);
 char	*ft_strstr(const char *str1, const char *str2);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
+void	ft_swap(int *a, int *b);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);
 
