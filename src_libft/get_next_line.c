@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-// Reads a file and returns text line by line.
-// Line is a text between line feed.
+#include "libft.h"
 
 static int	ft_line(char **s, char **line)
 {
@@ -44,45 +41,38 @@ static int	ft_line(char **s, char **line)
 	return (1);
 }
 
-static int	creat_line(const int fd, char **line, char **s, int ret)
+static int	ft_return(int ret, char **s, char **line)
 {
+	if (ret < 0)
+		return (-1);
+	else if (ret == 0 && (*s == NULL || *s[0] == '\0'))
+		return (0);
+	else
+		return (ft_line(s, line));
+}
+
+int			get_next_line(const int fd, char **line)
+{
+	int			ret;
+	static char	*s[FD_MAX];
 	char		buff[BUFF_SIZE + 1];
 	char		*tmp;
 
-	ret = read(fd, buff, BUFF_SIZE);
-	if (ret < 0)
+	if (fd < 0 || FD_MAX < fd || line == NULL || BUFF_SIZE < 1)
 		return (-1);
-	else if (ret == 0 && s[0][0] == '\0')
-	{
-		*line = NULL;
-		return (0);
-	}
+	ret = read(fd, buff, BUFF_SIZE);
 	while (ret > 0)
 	{
 		buff[ret] = '\0';
-		tmp = ft_strjoin(s[0], buff);
-		if (tmp == NULL)
+		if (s[fd] == NULL)
+			s[fd] = ft_strnew(0);
+		if ((tmp = ft_strjoin(s[fd], buff)) == NULL)
 			return (-1);
-		free(s[0]);
-		s[0] = tmp;
+		free(s[fd]);
+		s[fd] = tmp;
 		if (ft_strchr(s[fd], '\n'))
 			break ;
 		ret = read(fd, buff, BUFF_SIZE);
 	}
-	return (ft_line(&s[0], line));
-}
-
-int	get_next_line(const int fd, char **line)
-{
-	int			ret;
-	static char	*s[FD_SIZE];
-
-	ret = 0;
-	if (fd < 0 || FD_SIZE < fd || line == NULL || BUFF_SIZE < 1)
-		return (-1);
-	if (s[fd] == NULL)
-		s[fd] = ft_strnew(0);
-	if (s[fd] == NULL)
-		return (-1);
-	return (creat_line(fd, line, &s[fd], ret));
+	return (ft_return(ret, &s[fd], line));
 }
