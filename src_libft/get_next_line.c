@@ -6,7 +6,7 @@
 /*   By: mlink <mlink@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:49:47 by mlink             #+#    #+#             */
-/*   Updated: 2022/06/16 17:20:38 by mlink            ###   ########.fr       */
+/*   Updated: 2022/11/04 14:55:04 by mlink            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_return(int ret, char **s, char **line)
 		return (ft_line(s, line));
 }
 
-int			get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
 	int			ret;
 	static char	*s[FD_MAX];
@@ -66,7 +66,8 @@ int			get_next_line(const int fd, char **line)
 		buff[ret] = '\0';
 		if (s[fd] == NULL)
 			s[fd] = ft_strnew(0);
-		if ((tmp = ft_strjoin(s[fd], buff)) == NULL)
+		tmp = ft_strjoin(s[fd], buff);
+		if (tmp == NULL)
 			return (-1);
 		free(s[fd]);
 		s[fd] = tmp;
