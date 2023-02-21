@@ -30,7 +30,8 @@ code properly while keeping in mind that you will have to read again your code i
 Grade
 109 / 100
 
-Implemented Bonuses
+Implemented Bonuses:
+
 Font and background colors
 Bold, underline and reverse colors
 Binary print
