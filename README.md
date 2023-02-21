@@ -32,9 +32,9 @@ Grade
 
 Implemented Bonuses:
 
-Font and background colors
-Bold, underline and reverse colors
-Binary print
-Wildcard *
-fd_printf
-modification z - t_size and j - intmax_t
+Font and background colors;
+Bold, underline and reverse colors;
+Binary print;
+Wildcard *;
+fd_printf;
+modification z - t_size and j - intmax_t.
